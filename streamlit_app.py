@@ -1,9 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
-import os
 
-# Load the API key from Streamlit's environment variable set in the secrets management
-api_key = os.getenv('GENAI_API_KEY')
+# Configure the API key from Streamlit's secrets
+api_key = st.secrets["genai"]["api_key"]
 genai.configure(api_key=api_key)
 
 # Configure the Gemini AI model
